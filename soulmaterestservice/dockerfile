@@ -1,0 +1,5 @@
+FROM openjdk:11-jre-slim
+WORKDIR /usr/src
+ENV MONGO_URI mongodb://localhost:27017/mydem
+ADD ./target/springboot-0.0.1-SNAPSHOT.jar /usr/src/springboot-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar", "springboot-0.0.1-SNAPSHOT.jar"]
